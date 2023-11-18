@@ -16,3 +16,16 @@ function generateDivs(gridResolution) {
 };
 
 generateDivs(gridResolution);
+
+function getRandomRGBValue(min, max) {
+    return Math.random() * (max - min) + min;
+};
+
+const cells = document.querySelectorAll('.cell');
+cells.forEach((cell) => {
+    cell.addEventListener('mouseover', () => {
+        cell.style.background = `rgb(${getRandomRGBValue(0, 256)},
+                                     ${getRandomRGBValue(0, 256)},
+                                     ${getRandomRGBValue(0, 256)})`
+    });
+});
