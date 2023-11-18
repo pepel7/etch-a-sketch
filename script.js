@@ -1,5 +1,4 @@
 const convas = document.querySelector('.grid-container');
-
 let gridResolution = 16;
 
 function generateDivs(gridResolution) {
@@ -15,17 +14,36 @@ function generateDivs(gridResolution) {
     };
 };
 
-generateDivs(gridResolution);
+// coloring declaration
 
 function getRandomRGBValue(min, max) {
     return Math.random() * (max - min) + min;
 };
 
-const cells = document.querySelectorAll('.cell');
-cells.forEach((cell) => {
-    cell.addEventListener('mouseover', () => {
-        cell.style.background = `rgb(${getRandomRGBValue(0, 256)},
-                                     ${getRandomRGBValue(0, 256)},
-                                     ${getRandomRGBValue(0, 256)})`
+function colorCellsInRandomRGBColor() {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach((cell) => {
+        cell.addEventListener('mouseover', () => {
+            cell.style.background = `rgb(${getRandomRGBValue(0, 256)},
+                                         ${getRandomRGBValue(0, 256)},
+                                         ${getRandomRGBValue(0, 256)})`
+        });
     });
+}
+
+// end of coloring declaration
+
+generateDivs(gridResolution);
+colorCellsInRandomRGBColor();
+
+const columns = document.querySelectorAll('.column');
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', () => {
+    gridResolution = +prompt('Please enter the number of squares per side for the new grid');
+    columns.forEach((column) => {
+        convas.removeChild(column);
+    });
+    generateDivs(gridResolution);
+    colorCellsInRandomRGBColor();
 });
