@@ -36,6 +36,8 @@ function colorCellsInRandomRGBColor() {
 generateDivs(gridResolution);
 colorCellsInRandomRGBColor();
 
+// button
+
 const columns = document.querySelectorAll('.column');
 const btn = document.querySelector('button');
 
