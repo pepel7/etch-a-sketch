@@ -38,11 +38,12 @@ colorCellsInRandomRGBColor();
 
 // button
 
-const columns = document.querySelectorAll('.column');
+
 const btn = document.querySelector('button');
 
 btn.addEventListener('click', () => {
     gridResolution = +prompt('Please enter the number of squares per side for the new grid');
+    const columns = document.querySelectorAll('.column');
     columns.forEach((column) => {
         convas.removeChild(column);
     });
