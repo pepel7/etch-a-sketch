@@ -1,0 +1,45 @@
+* {
+    font-family: 'Noto sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* body {
+    background: gray;
+} */
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 580px;
+    align-items: center;
+}
+
+button {
+    align-self: stretch;
+    border-radius: 0;
+    border: 1px solid rgb(128, 36, 247);
+    border-bottom: 0px;
+    padding: 5px;
+}
+
+.grid-container {
+    border: 1px solid rgb(128, 36, 247);
+    height: 580px;
+    width: 580px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column,
+.cell {
+    border: 1px solid rgb(218, 190, 255);
+    flex-grow: 1;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
